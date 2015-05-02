@@ -1,0 +1,134 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+
+        // Do not place your application dependencies here.
+        // they belong in the individual module build.gradle files
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+group = 'com.yuyakaido.android'
+version = '1.0.0'
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+def siteUrl = 'https://github.com/yuyakaido/CenterTabIndicator'
+def gitUrl = 'https://github.com/yuyakaido/CenterTabIndicator.git'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = 'yuyakaido'
+    key = properties.getProperty('bintray.key')
+
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'CenterTabIndicator'
+        websiteUrl = siteUrl
+        issueTrackerUrl = 'https://github.com/yuyakaido/CenterTabIndicator/issues'
+        vcsUrl = gitUrl
+        licenses = ['Apache-2.0']
+        labels = ['Android']
+        publicDownloadNumbers = true
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'CenterTabIndicator'
+                url siteUrl
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'yuyakaido'
+                        name 'Yuya Kaido'
+                        email properties.getProperty('bintray.email')
+                    }
+                }
+                scm {
+                    connection 'https://github.com/yuyakaido/CenterTabIndicator.git'
+                    developerConnection 'https://github.com/yuyakaido/CenterTabIndicator.git'
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+apply plugin: 'maven-publish'
+android.libraryVariants
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact bundleRelease
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:22.1.1'
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+task findConventions << {
+    println project.getConvention()
+}
