@@ -1,3 +1,5 @@
+apply plugin: 'com.android.application'
+
 buildscript {
     repositories {
         jcenter()
@@ -5,11 +7,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
     }
-}
-apply plugin: 'com.android.application'
-
-repositories {
-    jcenter()
 }
 
 android {
