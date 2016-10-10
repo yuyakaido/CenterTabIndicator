@@ -75,7 +75,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.yuyakaido.android:center-tab-indicator:1.0.0'
+    compile 'com.yuyakaido.android:center-tab-indicator:1.0.1'
 }
 ```
 

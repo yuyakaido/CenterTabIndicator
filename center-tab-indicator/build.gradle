@@ -36,7 +36,7 @@ dependencies {
 publish {
     groupId = 'com.yuyakaido.android'
     artifactId = 'center-tab-indicator'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     uploadName = 'CenterTabIndicator'
     website = 'https://github.com/yuyakaido/CenterTabIndicator'
 }
