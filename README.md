@@ -1,9 +1,13 @@
 # CenterTabIndicator
 
+LINE NEWS like ViewPager indicator for Android
+
 # Sample
+
 ![Sample](https://github.com/yuyakaido/CenterTabIndicator/blob/master/sample/sample.gif)
 
 # Usage
+
 ```java
 public class MainActivity extends AppCompatActivity {
 
