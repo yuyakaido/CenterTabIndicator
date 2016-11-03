@@ -1,9 +1,9 @@
 # CenterTabIndicator
 
-## Sample
+# Sample
 ![Sample](https://github.com/yuyakaido/CenterTabIndicator/blob/master/sample/sample.gif)
 
-## Usage
+# Usage
 ```java
 public class MainActivity extends AppCompatActivity {
 
@@ -68,18 +68,16 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-## Download
-```groovy
-repositories {
-    jcenter()
-}
+# Installation
 
+```groovy
 dependencies {
     compile 'com.yuyakaido.android:center-tab-indicator:1.0.1'
 }
 ```
 
 ## License
+
 ```
 Copyright (C) 2015 yuyakaido. All rights reserved.
 
