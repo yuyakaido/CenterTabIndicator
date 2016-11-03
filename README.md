@@ -1,6 +1,6 @@
 # CenterTabIndicator
 
-LINE NEWS like ViewPager indicator for Android
+Center fixed ViewPager indicator for Android
 
 # Sample
 
