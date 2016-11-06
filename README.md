@@ -80,7 +80,7 @@ dependencies {
 }
 ```
 
-## License
+# License
 
 ```
 Copyright (C) 2015 yuyakaido. All rights reserved.
