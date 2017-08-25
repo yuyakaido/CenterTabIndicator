@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by yuyakaido on 2/23/15.
- */
 public class MainActivity extends AppCompatActivity {
 
     @Override

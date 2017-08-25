@@ -20,9 +20,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by yuyakaido on 2/23/15.
- */
 public class CenterTabIndicator extends HorizontalScrollView {
 
     public static final int MAX_SIZE = 300;

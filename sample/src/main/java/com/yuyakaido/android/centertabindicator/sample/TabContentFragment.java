@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * Created by yuyakaido on 2/22/15.
- */
 public class TabContentFragment extends Fragment {
 
     private TabItem mTabItem;
